@@ -16,6 +16,13 @@
 
 #pragma once
 
+// mod tap timeout
+#define TAPPING_TERM 200
+
+// need this to fix mod-tap behavior
+// -> keychrone branch is diverged a lot, this is fixed in QMK main
+#define IGNORE_MOD_TAP_INTERRUPT
+
 #ifdef RGB_MATRIX_ENABLE
 /* RGB Matrix Driver Configuration */
 #    define DRIVER_COUNT 1
@@ -47,6 +54,5 @@
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 
 /* Set LED driver current */
-#    define CKLED2001_CURRENT_TUNE \
-        { 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28 }
+#    define CKLED2001_CURRENT_TUNE {0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28, 0x28}
 #endif
